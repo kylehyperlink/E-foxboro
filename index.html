@@ -648,6 +648,141 @@
             transition: var(--transition-fast);
         }
 
+        /* Brochure Section Styles */
+        .brochure-section {
+            background: linear-gradient(135deg, var(--color-light) 0%, var(--color-white) 100%);
+        }
+
+        .brochure-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .brochure-preview {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: var(--shadow-large);
+            background: var(--color-white);
+            transition: var(--transition-smooth);
+        }
+
+        .brochure-preview:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 40px -10px rgba(0, 0, 0, 0.15);
+        }
+
+        .brochure-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .brochure-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .brochure-preview:hover .brochure-overlay {
+            opacity: 1;
+        }
+
+        .brochure-button {
+            display: inline-flex;
+            align-items: center;
+            font-family: var(--font-secondary);
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            padding: 0.875rem 2rem;
+            background: var(--color-white);
+            color: var(--color-primary);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: var(--transition-smooth);
+        }
+
+        .brochure-button:hover {
+            background: var(--color-accent);
+            color: var(--color-white);
+            transform: translateY(-2px);
+        }
+
+        .brochure-details h3 {
+            font-family: var(--font-primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-primary);
+        }
+
+        .brochure-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+
+        .brochure-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: var(--color-gray-dark);
+        }
+
+        .brochure-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .brochure-link {
+            display: inline-block;
+            font-family: var(--font-secondary);
+            font-weight: 500;
+            font-size: 1.125rem;
+            color: var(--color-primary);
+            text-decoration: none;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid var(--color-accent);
+            transition: var(--transition-fast);
+        }
+
+        .brochure-link:hover {
+            color: var(--color-accent);
+            padding-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .brochure-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .brochure-overlay {
+                opacity: 1;
+                padding: 1.5rem;
+            }
+
+            .brochure-details h3 {
+                font-size: 1.5rem;
+            }
+        }
+
         .lightbox-close:hover {
             color: var(--color-accent);
         }
@@ -916,6 +1051,43 @@
                 <p style="font-size: 1.25rem; color: var(--color-secondary);">
                     <strong>Estimated Value of Completed Work:</strong> [Value to be added] | <strong>Time Saved:</strong> 18-24 months
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brochure Section -->
+    <section class="section brochure-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Property Marketing Brochure</h2>
+                <p>Download our comprehensive property brochure with architectural plans, specifications, and neighborhood details.</p>
+            </div>
+
+            <div class="brochure-container fade-in">
+                <div class="brochure-preview">
+                    <img src="https://images.template.net/153622/report-template-ufn6n.jpg" alt="Property Brochure Preview" class="brochure-image">
+                    <div class="brochure-overlay">
+                        <a href="https://google.com" target="_blank" class="brochure-button">
+                            <svg style="width: 1.5rem; height: 1.5rem; margin-right: 0.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            View Full Brochure
+                        </a>
+                    </div>
+                </div>
+                <div class="brochure-details">
+                    <h3>What's Inside</h3>
+                    <ul class="brochure-list">
+                        <li>Complete architectural drawings and floor plans</li>
+                        <li>Site plan and landscaping details</li>
+                        <li>Permitted specifications and materials</li>
+                        <li>Neighborhood amenities and school information</li>
+                        <li>Timeline and next steps for construction</li>
+                    </ul>
+                    <a href="https://google.com" target="_blank" class="brochure-link">
+                        Open Brochure in New Window →
+                    </a>
+                </div>
             </div>
         </div>
     </section>
