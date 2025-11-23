@@ -1195,7 +1195,7 @@
             <p style="margin-top: 2rem; font-size: 0.8rem; line-height: 1.4;">Listed by Coldwell Banker Realty, Kerry Dowlin, Massachusetts Licensed Real Estate Broker. All property information is deemed reliable but not guaranteed; buyers are encouraged to verify all details independently. Contact us at (617) 817-6602 or Kerry.Dowlin@cbrealty.com for more information or to schedule a showing.</p>
 
             <p style="margin-top: 1rem; font-size: 0.8rem; line-height: 1.4;">We are committed to the principles of Equal Housing Opportunity. All real estate advertised herein is subject to the Federal Fair Housing Act and Massachusetts' fair housing laws, which make it illegal to advertise any preference, limitation, or discrimination because of race, color, religion, sex, disability, familial status, national origin, ancestry, age, marital status, sexual orientation, gender identity, veteran status, or source of income. All persons are hereby informed that all dwellings advertised are available on an equal opportunity basis.</p>
-            <p style="margin-top: 1.5rem; font-size: 0.8rem; color: var(--color-gray);">© 2024 Kerry Dowlin, Coldwell Banker Realty. All rights reserved.</p>
+            <p style="margin-top: 1.5rem; font-size: 0.8rem; color: var(--color-gray);" id="copyright-text">© <span id="current-year"></span> Kerry Dowlin, Coldwell Banker Realty. All rights reserved.</p>
             <img src="assets/images/fheo50.tif" alt="Equal Housing Opportunity" class="footer-logo">
         </div>
     </footer>
@@ -1213,6 +1213,8 @@
     <script>
         // Smooth scrolling and animations
         document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
             // Header scroll effect
             const header = document.querySelector('.header');
             window.addEventListener('scroll', () => {
